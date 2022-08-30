@@ -8,16 +8,36 @@ let imgDiv = document.getElementsByClassName("img")[0];
 let imgDiv1 = document.getElementsByClassName("img1")[0];
 let lengthLeft = document.getElementById("length-left");
 
+const printFontwithText = (text) => {
+    let newText = text ? text : "Costum Text";
+    for(let i = 0; i < fontsSelect.childNodes.length - 1; i++ ){
+        fontsSelect[i].innerText = newText;
+    }
+}
 const checkLengthText = (textNew) => {
-    if (textInput.value.length >= 0 && textInput.value.length < 10) {
-        textNew.fontSize = "10vw";
-
+    if (textInput.value.length >= 0 && textInput.value.length < 4) {
+        textNew.style.fontSize = "9vw";
+        textNew.setAttributeNS(null, "y", "60%");
     }
-    if (textInput.value.length >= 10 && textInput.value.length < 15) {
-        textNew.fontSize = "9vw";
+    if (textInput.value.length >= 4 && textInput.value.length < 8) {
+        textNew.setAttributeNS(null, "y", "59%");
+        textNew.style.fontSize = "8.5vw";
     }
-    if (textInput.value.length >= 15) {
-        textNew.fontSize = "7vw";
+    if (textInput.value.length >= 8 && textInput.value.length < 12) {
+        textNew.setAttributeNS(null, "y", "59%");
+        textNew.style.fontSize = "6.5vw";
+    }
+    if (textInput.value.length >= 12 && textInput.value.length < 16) {
+        textNew.setAttributeNS(null, "y", "58%");
+        textNew.style.fontSize = "6vw";
+    }
+    if (textInput.value.length >= 16 && textInput.value.length < 20) {
+        textNew.setAttributeNS(null, "y", "57%");
+        textNew.style.fontSize = "5.5vw";
+    }
+    if (textInput.value.length >= 20) {
+        textNew.setAttributeNS(null, "y", "56%");
+        textNew.style.fontSize = "5vw";
     }
 }
 document.addEventListener("resize", () => createCanvas(textInput.value, colorsSelect.value, fontsSelect.value))
@@ -31,12 +51,13 @@ const createCanvas = (text, color = "black", font, stroke = false) => {
 
 
     newText.setAttributeNS(null, "x", -2);
-    newText.setAttributeNS(null, "y", "80%");
+    
     newText.style.fontFamily = font ? font : "";
-    newText.style.letterSpacing = "-0.6vw";
-    checkLengthText(newText.style);
+    newText.style.letterSpacing = "-0.2vw";
+    checkLengthText(newText);
     newText.style.textAlign = "middle";
     newText.style.fontWeight = "600";
+    newText.style.transform = "scaleY(1.3)";
     newText.style.fill = stroke ? "white" : color;
     path.style.fill = stroke ? "white" : color;
     const textNode = document.createTextNode(text ? text : "Costum Text");
@@ -52,8 +73,9 @@ const createCanvas = (text, color = "black", font, stroke = false) => {
 createCanvas()
 
 textInput.onkeyup = ({ target }) => {
-    lengthLeft.innerText = target.value.length;
-    createCanvas(textInput.value, colorsSelect.value, fontsSelect.value)
+    lengthLeft.innerText = 24 - target.value.length;
+    createCanvas(textInput.value, colorsSelect.value, fontsSelect.value);
+    printFontwithText(target.value);
 };
 
 colorsSelect.onchange = ({ target }) => {
