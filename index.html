@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="img">
+            <div class="img1">
+                <svg id="svg" style="margin-left: 0.5em;" xmlns="http://www.w3.org/2000/svg" width="12vw" height="13vw"
+                    fill="currentColor" class="bi bi-instagram" viewBox="0 0 15.9 15">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg>
+                <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                    style="align-self: flex-end; width: 85%;" height="100%">
+                    <rect x="0" y="0" width="1" height="1" fill="#0000ff" style="width:100%;height:100%;opacity:0"
+                        id="move-rect"></rect>
+                    <g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="body" dir="rtl">
+            <div class="style">
+                <div class="section">
+                    <label>טקסט: <span id="name-span">נא לכתוב בזהירות</span></label>
+                    <input type="text" id="text" class="inputs" maxlength="24" />
+                    <p id="length">24/<span id="length-left">0</span> </p>
+                </div>
+                <div class="section">
+                    <label>צבע:</label>
+                    <div id="circle"></div>
+                    <select id="colors" class="inputs">
+                        <option value="">בחר צבע</option>
+                        <option value="#0D0E11">שחור <span id="circle-bcg" style="background-color: #0D0E11;"></span></option>
+                        <option value="#E6E9EE">לבן <span id="circle-bcg" style="background-color: #E6E9EE;"></span></option>
+                        <option value="#B0000D">אדום <span id="circle-bcg" style="background-color: #B0000D;"></span></option>
+                        <option value="#3DA1D2">תכלת <span id="circle-bcg" style="background-color: #3DA1D2;"></span></option>
+                        <option value="#FEC500">צהוב <span id="circle-bcg" style="background-color: #FEC500;"></span></option>
+                        <option value="#EBD494">קרם <span id="circle-bcg" style="background-color: #EBD494;"></span></option>
+                        <option value="#ED84B6">ורוד <span id="circle-bcg" style="background-color: #ED84B6;"></span></option>
+                        <option value="#289901">ירוק <span id="circle-bcg" style="background-color: #289901;"></span></option>
+                        <option value="#756232">זהב מבריק <span id="circle-bcg" style="background-color: #756232;"></span></option>
+                        <option value="#cc3e7a">ורוד פוקסיה מבריק <span id="circle-bcg" style="background-color: #cc3e7a;"></span>
+                        </option>
+                        <option value="#e7e7e7">כסף מבריק <span id="circle-bcg" style="background-color: #e7e7e7;"></span></option>
+                        <option value="#292A2C">שחור <span id="circle-bcg" style="background-color: #292A2C;"></span></option>
+                        <option value="#7F5735">נחושת - קופרה <span id="circle-bcg" style="background-color: #7F5735;"></span></option>
+                        <option value="#808284">כסוף <span id="circle-bcg" style="background-color: #808284;"></span></option>
+                        <option value="#816D42">זהב <span id="circle-bcg" style="background-color: #816D42;"></span></option>
+                        <option value="#59b2ee">תכלת <span id="circle-bcg" style="background-color: #59b2ee;"></span></option>
+                        <option value="#c9dd60">ירוק פסטל <span id="circle-bcg" style="background-color: #c9dd60;"></span></option>
+                    </select>
+                </div>
+                <div class="section">
+                    <label>פונט:</label>
+                    <select id="fonts" class="inputs">
+                        <option value="">בחר פונט</option>
+                        <option value="Arial" style="font-family: Arial;">Arial</option>
+                        <option value="Helvetica" style="font-family: Helvetica;">Helvetica</option>
+                        <option value="Verdana" style="font-family: Verdana;">Verdana</option>
+                        <option value="Calibri" style="font-family: Calibri;">Calibri</option>
+                        <option value="Noto" style="font-family: Noto;">Noto</option>
+                        <option value="Lucida Sans" style="font-family: Lucida Sans;">Lucida Sans</option>
+                        <option value="Gill Sans" style="font-family: Gill Sans;">Gill Sans</option>
+                        <option value="Century Gothic" style="font-family: Century Gothic;">Century Gothic</option>
+                        <option value="Candara" style="font-family: Candara;">Candara</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="download()">הורד תמונה</button>
+        </div>
+    </div>
+</body>
+
+</html>
