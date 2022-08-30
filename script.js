@@ -33,7 +33,7 @@ const createCanvas = (text, color = "black", font, stroke = false) => {
     newText.setAttributeNS(null, "x", -2);
     newText.setAttributeNS(null, "y", "80%");
     newText.style.fontFamily = font ? font : "";
-    newText.style.letterSpacing = "-1vw";
+    newText.style.letterSpacing = "-0.6vw";
     checkLengthText(newText.style);
     newText.style.textAlign = "middle";
     newText.style.fontWeight = "600";
